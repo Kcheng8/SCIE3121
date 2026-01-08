@@ -438,6 +438,48 @@ body {
 }
 
 /* Responsive adjustments */
+/* Small-screen accessibility and image scaling */
+html {
+    /* ensure in-page anchors are visible beneath the sticky navbar */
+    scroll-padding-top: 80px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.menu-toggle {
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.nav-links a {
+    padding: 0.5rem 0.25rem;
+    min-height: 44px; /* recommended minimum touch target */
+    display: inline-flex;
+    align-items: center;
+}
+
+.qr_code {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.qr_container {
+    padding: 0.75rem;
+}
+
+/* Focus styles for keyboard accessibility */
+.nav-links a:focus,
+.qr_link:focus,
+.back_button:focus {
+    outline: 3px solid rgba(15, 23, 42, 0.12);
+    outline-offset: 3px;
+}
+
 @media (max-width: 1024px) {
     .poster_grid {
         grid-template-columns: repeat(2, 1fr);
@@ -446,4 +488,43 @@ body {
     .qr_grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media (max-width: 768px) {
+    /* preserve earlier adjustments but tighten spacing */
+    .hero_section {
+        padding: 2.5rem 1rem;
+    }
+    .hero_container { min-height: 220px; }
+    .poster_card { padding: 1.25rem; }
+    .detail_content { padding: 1rem; }
+}
+
+@media (max-width: 480px) {
+    /* Single column layout and mobile-friendly sizes */
+    .hero_section {
+        padding: 1.5rem 0.75rem;
+    }
+    .hero_section h1 {
+        font-size: 1.4rem;
+        line-height: 1.25;
+    }
+    .hero_section .subtitle { font-size: 0.95rem; }
+    .poster_grid, .qr_grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .poster_card {
+        padding: 1rem;
+    }
+    .poster_card h3 { font-size: 1.15rem; }
+    .detail_content h2 { font-size: 1.5rem; }
+    .detail_content h3 { font-size: 1.1rem; }
+    .detail_content { padding: 0.9rem; }
+    .two_column { grid-template-columns: 1fr; }
+    .qr_code { max-width: 160px; }
+    .qr_container { padding: 0.5rem; }
+    .qr_link { padding: 0.6rem 0.9rem; font-size: 0.95rem; }
+    .footer { padding: 2rem 1rem; }
+    .footer_bottom { padding: 0.75rem 0; }
 }
