@@ -417,6 +417,24 @@ body {
     color: var(--text-dark);
 }
 
+/* References List Styling */
+.references_list {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.references_list li {
+    margin-bottom: 1.25rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.references_list em {
+    font-style: italic;
+    color: var(--primary-color);
+}
+
 .two_column {
     display: grid;
     grid-template-columns: 1fr 1fr;
